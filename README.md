@@ -28,9 +28,26 @@ minikube start
 
 You should see a message like this at the end:
 
-> Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+```powershell
+🏄  Done! kubectl is now configured to use "minikube" 
+    cluster and "default" namespace by default
+```
 
-If anything goes wrong, the container was not properly initialized. There is more help in this [link][13]
+If anything goes wrong, the container was not properly initialized, you might see an output telling that the PROVIDER is not running
+
+```powershell
+😄  minikube v1.26.1 on Microsoft Windows 11 Pro 10.0.22000 Build 22000
+✨  Using the docker driver based on existing profile
+💣  Exiting due to PROVIDER_DOCKER_NOT_RUNNING: "docker version --format -" 
+    exit status 1: error during connect: This error may indicate that the 
+    docker daemon is not running.: 
+    Get "http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.24/version": 
+    open //./pipe/docker_engine: The system cannot find the file specified.
+💡  Suggestion: Start the Docker service
+📘  Documentation: https://minikube.sigs.k8s.io/docs/drivers/docker/
+```
+
+There is more help in this [link][13]
 
 ## Interacting with the cluster
 
@@ -40,6 +57,12 @@ In previous step the kubectl was installed and configured, from this point we ca
 kubectl get po -A
 ```
 
+At any time we can list all the deployments with the below command:
+
+```powershell
+kubectl get deploy
+```
+
 ## Dashboard
 
 Minikube comes with a beautiful dashboard where we can see Workloads, Services, Config, Storage, Clusters, Definitions and Settings where we can configure a bunch of things
@@ -47,6 +70,7 @@ Minikube comes with a beautiful dashboard where we can see Workloads, Services, 
 ```powershell
 minikube dashboard
 ```
+![](images/dashboard.png)
 
 # The Hello World
 
@@ -75,6 +99,12 @@ Alternatively, use kubectl to forward the port:
 kubectl port-forward service/hello-minikube 7080:8080
 ```
 
+We can delete a deployment with the **delete deploy**
+
+```powershell
+kubectl delete deploy hello-minikube
+```
+
 ## LoadBalancer deployments
 
 To access a LoadBalancer deployment, use the “minikube tunnel” command. Here is an example deployment:
@@ -101,7 +131,7 @@ kubectl get services balanced
 
 Your deployment is now available at <EXTERNAL-IP>:8080
 
-## Manage your cluster
+## Manage the cluster
 
 Pause Kubernetes without impacting deployed applications:
 
