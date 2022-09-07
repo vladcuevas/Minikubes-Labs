@@ -2,17 +2,19 @@
 
 According to the official page, [minikube][1] is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes.
 
-All you need is Docker (or similarly compatible) container or a Virtual Machine environment, and Kubernetes is a single command away: minikube start
+All you need is [Docker][2] (or similarly compatible) [container][3] or a [Virtual Machine][4] environment, and Kubernetes is a single command away: minikube start.
+
+Per this lab, we'll use Docker, a few commands can be found [here][5]
 
 ## Requirements
 
-Container or virtual machine manager, such as: [Docker][2], [Hyperkit][3], [Hyper-V][4], [KVM][5], [Parallels][6], [Podman][7], [VirtualBox][8], or [VMware Fusion/Workstation][9]
+Container or virtual machine manager, such as: [Docker][2], [Hyperkit][7], [Hyper-V][8], [KVM][9], [Parallels][10], [Podman][11], [VirtualBox][12], or [VMware Fusion/Workstation][13]
 
 ## Installation
 
-Installers can be found in this [link][10] from the official minikube page,
+Installers can be found in this [link][14] from the official minikube page,
 
-In case that you are using [chocolatey][11], you can execute the below command:
+In case that you are using [chocolatey][15], you can execute the below command:
 
 ```
 choco install minikube
@@ -20,7 +22,7 @@ choco install minikube
 
 ## Start the cluster
 
-From the terminal with administrator privileges, execute the below command, which will download [Kubernetes][12] with the current images, it will also create the docker container with 2 CPUs and 8GB of RAM:
+From the terminal with administrator privileges, execute the below command, which will download [Kubernetes][16] with the current images, it will also create the docker container with 2 CPUs and 8GB of RAM:
 
 ```
 minikube start
@@ -47,7 +49,7 @@ If anything goes wrong, the container was not properly initialized, you might se
 📘  Documentation: https://minikube.sigs.k8s.io/docs/drivers/docker/
 ```
 
-There is more help in this [link][13]
+There is more help in this [link][17]
 
 ## Interacting with the cluster
 
@@ -177,14 +179,18 @@ minikube delete --all
 
   [1]: https://minikube.sigs.k8s.io/docs/start/
   [2]: https://minikube.sigs.k8s.io/docs/drivers/docker/
-  [3]: https://minikube.sigs.k8s.io/docs/drivers/hyperkit/
-  [4]: https://minikube.sigs.k8s.io/docs/drivers/hyperv/
-  [5]: https://minikube.sigs.k8s.io/docs/drivers/kvm2/
-  [6]: https://minikube.sigs.k8s.io/docs/drivers/parallels/
-  [7]: https://minikube.sigs.k8s.io/docs/drivers/podman/
-  [8]: https://minikube.sigs.k8s.io/docs/drivers/virtualbox/
-  [9]: https://minikube.sigs.k8s.io/docs/drivers/vmware/
-  [10]: https://minikube.sigs.k8s.io/docs/start/
-  [11]: https://chocolatey.org/
-  [12]: https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj8rKKs3Nv5AhX4t4QIHRv9C-gQFnoECBQQAQ&url=https%3A%2F%2Fkubernetes.io%2F&usg=AOvVaw0xBs3cfCr_LiSaO9HgIBOM
-  [13]: https://minikube.sigs.k8s.io/docs/drivers/
+  [3]: https://www.docker.com/resources/what-container/
+  [4]: https://www.vmware.com/topics/glossary/content/virtual-machine.html
+  [5]: Docker.md
+  [6]: https://minikube.sigs.k8s.io/docs/drivers/docker/
+  [7]: https://minikube.sigs.k8s.io/docs/drivers/hyperkit/
+  [8]: https://minikube.sigs.k8s.io/docs/drivers/hyperv/
+  [9]: https://minikube.sigs.k8s.io/docs/drivers/kvm2/
+  [10]: https://minikube.sigs.k8s.io/docs/drivers/parallels/
+  [11]: https://minikube.sigs.k8s.io/docs/drivers/podman/
+  [12]: https://minikube.sigs.k8s.io/docs/drivers/virtualbox/
+  [13]: https://minikube.sigs.k8s.io/docs/drivers/vmware/
+  [14]: https://minikube.sigs.k8s.io/docs/start/
+  [15]: https://chocolatey.org/
+  [16]: https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj8rKKs3Nv5AhX4t4QIHRv9C-gQFnoECBQQAQ&url=https%3A%2F%2Fkubernetes.io%2F&usg=AOvVaw0xBs3cfCr_LiSaO9HgIBOM
+  [17]: https://minikube.sigs.k8s.io/docs/drivers/
