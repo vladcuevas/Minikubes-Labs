@@ -181,7 +181,7 @@ minikube delete --all
   [2]: https://minikube.sigs.k8s.io/docs/drivers/docker/
   [3]: https://www.docker.com/resources/what-container/
   [4]: https://www.vmware.com/topics/glossary/content/virtual-machine.html
-  [5]: Docker.md
+  [5]: https://github.com/vladcuevas/Container-Labs/blob/main/README.md
   [6]: https://minikube.sigs.k8s.io/docs/drivers/docker/
   [7]: https://minikube.sigs.k8s.io/docs/drivers/hyperkit/
   [8]: https://minikube.sigs.k8s.io/docs/drivers/hyperv/
