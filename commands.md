@@ -17,6 +17,7 @@ kubectl create -f deployment-apple-silicon.yml -n devldx
 ```powershell
 kubectl get deployments  -n devldx
 kubectl get services  -n devldx
+kubectl get pods  -n devldx
 ```
 
 # Start the services
