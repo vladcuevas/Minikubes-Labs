@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ehealth-app-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: react-front-end-service
+                port: 
+                  number: 80
+          - path: /api/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: spring-boot-backend-rest-service
+                port: 
+                  number: 8080
