@@ -10,15 +10,13 @@ minikube status
 
 ## Create Deployments and Ingress
 ```powershell
-minikube addons enable ingress
 kubectl create -f deployment-apple-silicon.yml -n devldx
 ```
 
-## Get information of our deployments, services and ingress
+## Get information of our deployments, services
 ```powershell
 kubectl get deployments  -n devldx
 kubectl get services  -n devldx
-kubectl get ingress  -n devldx
 ```
 
 # Start the services
@@ -56,6 +54,5 @@ minikube ip
 ```powershell
 kubectl delete deployments --all -n devldx
 kubectl delete services --all -n devldx
-kubectl delete ingress --all -n devldx
 kubectl delete namespace devldx
 ```
