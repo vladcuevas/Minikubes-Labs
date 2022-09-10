@@ -1,0 +1,24 @@
+A video with the application running and the kube working can be found here:
+
+https://www.youtube.com/watch?v=F_SUo_5MiqE
+
+All the code of the components of this video and documentation can be found in the below links, the Docker images link is down below:
+
+If you want just to replicate the steps from the video just follow them from this link:
+   https://github.com/vladcuevas/Minikubes-Labs/blob/main/commands.md
+
+GitHub - code and documentation:
+Minikubes:
+   https://github.com/vladcuevas/Minikubes-Labs
+Containers:
+   https://github.com/vladcuevas/Container-Labs
+React:
+   https://github.com/vladcuevas/reactjs-axios-labs
+Spring Boot
+   https://github.com/vladcuevas/spring-boot-labas
+
+Docker images (For Windows and Mac):
+React:
+   https://hub.docker.com/r/vlad0x/dockerized-react/tags
+Spring Boot:
+   https://hub.docker.com/r/vlad0x/my-spring-boot-demo-docker/tags

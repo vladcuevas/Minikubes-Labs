@@ -23,7 +23,7 @@ spec:
         app: spring-boot-backend-rest-api
     spec:
       containers:
-        - image: vlad0x/my-spring-boot-demo-docker:apple-silicon
+        - image: vlad0x/my-spring-boot-demo-docker:windows11
           name: my-spring-boot-demo-docker
           resources: {}
 ---
@@ -87,6 +87,7 @@ spec:
     app: react-front-end
   type: NodePort
 ---
+
 # apiVersion: networking.k8s.io/v1
 # kind: Ingress
 # metadata:
