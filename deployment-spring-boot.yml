@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: springvld0x
+  name: springvld0x
+  namespace: devldx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: springvld0x
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: springvld0x
+    spec:
+      containers:
+      - image: vlad0x/my-spring-boot-demo-docker:apple-silicon
+        name: my-spring-boot-demo-docker
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: springvld0x
+  name: springvld0x
+  namespace: devldx
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: springvld0x
+  type: LoadBalancer
+status:
+  loadBalancer: {}
