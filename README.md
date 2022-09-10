@@ -551,7 +551,7 @@ Increase the default memory limit (requires a restart):
 minikube config set memory 16384
 ```
 
-Browse the catalog of easily installed Kubernetes services:
+Browse the catalog of easily installed Kubernetes services, the below command allows us to see the installed addons:
 
 ```powershell
 minikube addons list
