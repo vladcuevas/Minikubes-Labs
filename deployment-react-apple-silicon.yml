@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: react
+  name: react
+  namespace: devldx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: react
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: react
+    spec:
+      containers:
+      - image: vlad0x/dockerized-react:apple-silicon
+        name: dockerized-react
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: react
+  name: react
+  namespace: devldx
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: react
+  type: LoadBalancer
+status:
+  loadBalancer: {}
