@@ -8,9 +8,16 @@ minikube start
 minikube status
 ```
 
-## Create Deployments and Ingress
+## Create Deployments
+
+If using Macbook with Apple Silicon Chip:
 ```powershell
 kubectl create -f deployment-apple-silicon.yml -n devldx
+```
+
+If using Windows11:
+```powershell
+kubectl create -f deployment-windows11.yml -n devldx
 ```
 
 ## Get information of our deployments, services
@@ -20,13 +27,13 @@ kubectl get services  -n devldx
 kubectl get pods  -n devldx
 ```
 
-# Start the services
-If you want to avoid wasting time, do not try the below two lines of command, go directly to the next step (**Use kubectl to forward the port**) where we have more control of the ports.
+OR:
 
 ```powershell
-minikube service react-front-end-service -n devldx
-minikube service spring-boot-backend-rest-service -n devldx
+kubectl get deployments  -n devldx ; kubectl get services  -n devldx ; kubectl get pods  -n devldx
 ```
+
+# Start the services
 
 With this commands we can start our services mapping the internal ports to whatever we need in the loca machine, in case we need to define something more robust, we can do so for a Cloud service provider with DSNs or some LoadBalancer structure, and with more security, these two commands most stay running, you cannot close the terminal window in Windows, if you can use nohup, you can run it with that but the purpose of this is not production by any means.
 
