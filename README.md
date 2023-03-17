@@ -1,40 +1,42 @@
 # Minikube Labs
 
-According to the official page, [minikube][1] is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes.
+[Minikube][1] is a local Kubernetes solution designed to make it easy to learn and develop for Kubernetes. All you need is [Docker][9] (or a similar [container][3] technology) or a [Virtual Machine][4] environment, and you can start a Kubernetes cluster with a single command: minikube start.
 
-All you need is [Docker][9] (or similarly compatible) [container][3] or a [Virtual Machine][4] environment, and Kubernetes is a single command away: minikube start.
+In this lab, we will use Docker for our container environment. You can find a few useful Docker commands [here][5].
 
-Per this lab, we'll use Docker, a few commands can be found [here][5]
+Minikube is designed to create single-node clusters, which can be helpful for those pursuing Kubernetes certifications. You can find more information about Kubernetes certifications from the Cloud Native Computing Foundation (CNCF) [here][6], including the [Certified Kubernetes Administrator (CKA)][7] certification.
 
-It is meant to build one cluster, if you are into certifications, Kubernetes various options that can be found in the below link
+Once you have created a Docker image, you will want to run it in a cluster. There are several options for doing so, but we will start with the smallest unit, the pod. For example, you can create one pod for the API and another for the frontend.
 
-[https://www.cncf.io/][6]
+To create a pod from your Docker images, follow the steps provided in this [link][8].
 
-[CKA][7]
+To create a deployment with a custom Docker image, you can use the following `kubectl` command:
 
-Once we have a Docker image, we want to run it in a cluster, we have a couple of options, but we can start with the minimal unit, the pods, i.e one pod for API, one for Frontend, etc.
-
-Based on the images created like in this [link][8], we can create a pod out of our Docker images, like this:
-
-```powershell
-> kubectl run --image my-spring-boot-demo-docker:latest app
+```bash
+codekubectl run --image my-spring-boot-demo-docker:latest app
 ```
 
-We'll have a result like this, where the pod/app is the name of the pod
-pod/app created
+After executing this command, you should see a message confirming that the pod has been created:
 
-We can check the pods with, if we add the option -w the command will wait for the pod to be terminated, like -f option from the Linux tail command:
-
-kubectl get pods
-
-This will return the names and the statuses of the applications that we are running
-
-If we need to delete a pod we can execute the below command:
-
-```powershell
-> kubectl delete pod <name of the pod>
+```bash
+codepod/app created
 ```
 
+To view the status of your pods, you can run the following command:
+
+```bash
+codekubectl get pods
+```
+
+If you use the `-w` option with this command, it will watch for changes in the pod's status and display updates in real-time, similar to the `-f` option in the Linux `tail` command.
+
+To delete a pod, you can use the following command:
+
+```bash
+codekubectl delete pod 
+```
+
+Replace `` with the actual name of the pod you want to delete.
 
 ## Deployments
 
@@ -466,7 +468,7 @@ minikube dashboard
 ```
 ![](images/dashboard.png)
 
-# The Hello World
+# The Hello World Example
 
 We can create a hello world sample with the below commands:
 
@@ -570,6 +572,8 @@ minikube delete --all
 ```
 
 # Create a deployment for nginx
+
+To create an nginx deployment using `kubectl`, run the following command:
 
 ```yaml
 kubectl create deployment --image nginx nginx
