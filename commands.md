@@ -1,7 +1,8 @@
-Before starting make sure that Docker daemon is running
-Make sure that your ports are not being used by other applications
+# Commands - Project Setup
 
-## Start the Minikube and Check the Status
+Before starting, make sure that the Docker daemon is running and your ports are not being used by other applications.
+
+## Start Minikube and Check the Status
 
 ```powershell
 minikube start
@@ -10,42 +11,46 @@ minikube status
 
 ## Create Deployments
 
-If using Macbook with Apple Silicon Chip:
+Choose the appropriate deployment file based on your system:
+
+### Apple Silicon Macbook
 ```powershell
 kubectl create -f deployment-apple-silicon.yml -n devldx
 ```
 
-If using Windows11:
+### Windows 11
+
 ```powershell
 kubectl create -f deployment-windows11.yml -n devldx
 ```
 
-## Get information of our deployments, services
+## Get Information on Deployments, Services, and Pods
+
 ```powershell
 kubectl get deployments  -n devldx
 kubectl get services  -n devldx
 kubectl get pods  -n devldx
 ```
 
-OR:
+Alternatively, you can execute all three commands at once:
 
 ```powershell
 kubectl get deployments  -n devldx ; kubectl get services  -n devldx ; kubectl get pods  -n devldx
 ```
 
-# Start the services
+# Start the Services
 
-With this commands we can start our services mapping the internal ports to whatever we need in the loca machine, in case we need to define something more robust, we can do so for a Cloud service provider with DSNs or some LoadBalancer structure, and with more security, these two commands most stay running, you cannot close the terminal window in Windows, if you can use nohup, you can run it with that but the purpose of this is not production by any means.
+Use the following commands to start the services and map the internal ports to your local machine. Note that these commands should remain running, so do not close the terminal windows. For production environments, consider using a cloud service provider with DNS or LoadBalancer configurations for enhanced security.
 
-## Use kubectl to forward the port:
+## Forward Ports with kubectl
 
-In one terminal execute the below command (do not close the windows):
+In one terminal, execute the following command (do not close the window):
 
 ```powershell
 kubectl port-forward service/spring-boot-backend-rest-service 8080:8080 -n devldx
 ```
 
-In another terminal execute the below command (do not close the window)
+In another terminal, execute the following command (do not close the window):
 
 ```powershell
 kubectl port-forward service/react-front-end-service 3000:80 -n devldx
@@ -57,7 +62,9 @@ kubectl port-forward service/react-front-end-service 3000:80 -n devldx
 minikube ip
 ```
 
-## Delete all
+## Clean Up
+
+To delete all deployments, services, and the namespace, run the following commands:
 
 ```powershell
 kubectl delete deployments --all -n devldx
